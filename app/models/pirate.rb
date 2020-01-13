@@ -1,11 +1,11 @@
 class Pirate
 
       @@all = []
-      attr_accessor :name ,:weight , :height
+      attr_accessor :name ,:weight,:height
        def initialize(attribute)
-        @name = attribute[:name]
-        @weight = attribute[:weight]
-        @height = attribute[:height]
+        @name = attribute[:pirate][:name]
+        @weight = attribute[:pirate][:weight]
+        @height = attribute[:pirate][:height]
         @@all << self
         self
         end

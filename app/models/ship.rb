@@ -9,6 +9,11 @@ class Ship
         @@all << self
         self
       end
+      
+      def self.create(arry)
+        arry.map{|hash| self.new(hash)}
+      end
+      
      def self.all 
        @@all
      end
