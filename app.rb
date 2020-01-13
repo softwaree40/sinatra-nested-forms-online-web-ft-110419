@@ -3,6 +3,7 @@ require './environment'
 module FormsLab
   class App < Sinatra::Base
 # code other routes/actions here
+
     get "/" do 
       
       erb :root
@@ -12,15 +13,15 @@ module FormsLab
      erb :"pirates/new"
    end
      post '/pirates' do 
-      
-     Pirates.new(params)
-      
-      binding.pry
-      redirect "/pirates/show"
-     end
-     get "/pirates/show" do 
-          
+      @pirate = Pirate.new(params[:pirate])
+      @ships = params[:ships].map{|hash| Ship.new(hash) }
        erb :"/pirates/show"
      end
-  end
+     
+    # get "/pirates/:id/show" do 
+    #       @pirate = 
+    #   erb :"/pirates/show"
+    # end
+   end
 end
+       
